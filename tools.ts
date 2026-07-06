@@ -1,0 +1,200 @@
+import { ToolDef } from "../types";
+
+export const TOOLS: ToolDef[] = [
+  // Organize Category
+  {
+    id: "organize-pdf",
+    name: "Organize PDF",
+    description: "Visually reorder, rotate, delete, duplicate, or extract pages of your PDF with a real-time drag-and-drop organizer.",
+    category: "organize",
+    maxSizeMB: 50,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+  {
+    id: "merge-pdf",
+    name: "Merge PDF",
+    description: "Combine multiple PDF files into a single document in any order you want.",
+    category: "organize",
+    maxSizeMB: 100,
+    allowedMimeTypes: ["application/pdf"],
+  },
+  {
+    id: "split-pdf",
+    name: "Split PDF",
+    description: "Extract specific pages from a PDF or split pages into individual files.",
+    category: "organize",
+    maxSizeMB: 50,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+
+  // Optimize Category
+  {
+    id: "compress-pdf",
+    name: "Compress PDF",
+    description: "Reduce file size of your PDF while maintaining optimal quality.",
+    category: "optimize",
+    maxSizeMB: 100,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+  {
+    id: "ocr-pdf",
+    name: "OCR PDF",
+    description: "Detect scanned text inside your PDF automatically and convert it to a fully searchable PDF.",
+    category: "optimize",
+    maxSizeMB: 50,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+
+  // Convert Category
+  {
+    id: "pdf-to-word",
+    name: "PDF to Word",
+    description: "Convert PDFs to fully editable Microsoft Word documents with high layout preservation.",
+    category: "convert",
+    maxSizeMB: 40,
+    allowedMimeTypes: ["application/pdf"],
+  },
+  {
+    id: "word-to-pdf",
+    name: "Word to PDF",
+    description: "Make DOC, DOCX, RTF and ODT files easy to view and distribute by converting them to PDF.",
+    category: "convert",
+    maxSizeMB: 40,
+    allowedMimeTypes: [
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/rtf",
+      "text/rtf",
+      "application/vnd.oasis.opendocument.text",
+    ],
+    requiresOptions: true,
+  },
+  {
+    id: "pdf-to-jpg",
+    name: "PDF to JPG",
+    description: "Convert each page of a PDF document into high-quality JPEG images.",
+    category: "convert",
+    maxSizeMB: 40,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+  {
+    id: "jpg-to-pdf",
+    name: "JPG to PDF",
+    description: "Convert your JPG, JPEG, PNG, WEBP, BMP, and TIFF images into standard PDF files in seconds.",
+    category: "convert",
+    maxSizeMB: 30,
+    allowedMimeTypes: [
+      "image/jpeg",
+      "image/png",
+      "image/webp",
+      "image/bmp",
+      "image/tiff",
+      "image/heic",
+      "image/heif"
+    ],
+    requiresOptions: true,
+  },
+
+  // Security Category
+  {
+    id: "sign-pdf",
+    name: "Sign PDF",
+    description: "Securely sign your PDF documents with custom drawn, typed, or uploaded signature stamps on any page.",
+    category: "security",
+    maxSizeMB: 50,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+  {
+    id: "protect-pdf",
+    name: "Protect PDF",
+    description: "Secure your PDF files with a strong password to prevent unauthorized reading or copying.",
+    category: "security",
+    maxSizeMB: 40,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+  {
+    id: "unlock-pdf",
+    name: "Unlock PDF",
+    description: "Remove security password protection from a PDF to let you edit or print it.",
+    category: "security",
+    maxSizeMB: 40,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+
+  // Edit/Modify Category
+  {
+    id: "rotate-pdf",
+    name: "Rotate PDF",
+    description: "Rotate one or all pages of your PDF document to portrait or landscape mode.",
+    category: "edit",
+    maxSizeMB: 50,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+  {
+    id: "delete-pages",
+    name: "Delete Pages",
+    description: "Remove unnecessary pages from a PDF document to keep only what matters.",
+    category: "edit",
+    maxSizeMB: 50,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+  {
+    id: "extract-pages",
+    name: "Extract Pages",
+    description: "Extract specific pages from a PDF file and save them as a separate document.",
+    category: "edit",
+    maxSizeMB: 50,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+  {
+    id: "reorder-pages",
+    name: "Reorder Pages",
+    description: "Rearrange the sequence of pages in your PDF document visually.",
+    category: "edit",
+    maxSizeMB: 50,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+  {
+    id: "watermark-pdf",
+    name: "Watermark PDF",
+    description: "Add clean text overlay watermarks on all pages of your PDF to protect copyright.",
+    category: "edit",
+    maxSizeMB: 50,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+  {
+    id: "page-number",
+    name: "Page Numbers",
+    description: "Add professional page numbers to your PDF with customized positioning and font sizes.",
+    category: "edit",
+    maxSizeMB: 50,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+  {
+    id: "crop-pdf",
+    name: "Crop PDF",
+    description: "Crop the visible margin boundaries of your PDF pages for better reading layouts.",
+    category: "edit",
+    maxSizeMB: 50,
+    allowedMimeTypes: ["application/pdf"],
+    requiresOptions: true,
+  },
+];
+
+export function getToolById(id: string): ToolDef | undefined {
+  return TOOLS.find((tool) => tool.id === id);
+}
